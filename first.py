@@ -41,19 +41,19 @@ b9 = Button(root, text="9", command=buttonFunction)
 b9.pack(side=LEFT)
 
 b10 = Button(root, text="+", command=buttonFunction)
-b10.pack(side=BOTTOM)
+b10.pack(side=TOP)
 
 b11 = Button(root, text="-", command=buttonFunction)
-b11.pack(side=BOTTOM)
+b11.pack(side=TOP)
 
 b12 = Button(root, text="*", command=buttonFunction)
-b12.pack(side=BOTTOM)
+b12.pack(side=TOP)
 
 b13 = Button(root, text="/", command=buttonFunction)
-b13.pack(side=BOTTOM)
+b13.pack(side=TOP)
 
 b14 = Button(root, text="=", command=buttonFunction)
-b14.pack(side=BOTTOM)
+b14.pack(side=TOP)
 root.mainloop()
 #123123
 
