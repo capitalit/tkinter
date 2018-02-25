@@ -7,8 +7,7 @@ l.pack(side=TOP)
 def buttonFunction():
     print("hello world")
 
-b = Button(root, text="SUMA", command=buttonFunction)
-b.pack(side=BOTTOM)
+
 
 b0 = Button(root, text="0",command=buttonFunction)
 b0.pack(side=LEFT)
@@ -54,6 +53,10 @@ b13.pack(side=TOP)
 
 b14 = Button(root, text="=", command=buttonFunction)
 b14.pack(side=TOP)
+
+b = Button(root, text="zamknij", command=buttonFunction)
+b.pack(side=RIGHT)
+
 root.mainloop()
 #123123
 
