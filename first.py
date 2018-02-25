@@ -1,62 +1,34 @@
 from tkinter import *
 root = Tk()
-root.geometry('400x200')
+#root.geometry('400x200')
 l=Label(root, text="kalkulator")
 l.pack(side=TOP)
 
 def buttonFunction():
     print("hello world")
 
+def iCalc(source, side) :
+    storeObj = Frame(source, borderwidth=4, bd=4, bg="powder blue")
+    storeObj.pack(side=side, expand=YES, fill=BOTH)
+    return storeObj
+
+def button(source, side , text, command=None):
+    storeObj = Button(source, text=text, command=command)
+    storeObj.pack(side=side, expand=YES, fill=BOTH)
+    return storeObj
+
+class app(Frame):
+    def __init__(self):
+        Frame.__init__(self)
+        self.option_add('*Font','arial 40 bold')
+        self.pack(expand=YES, fill=BOTH)
+        self.master.title('Kalkulator')
 
 
-b0 = Button(root, text="0",command=buttonFunction)
-b0.pack(side=LEFT)
+        display = StringVar()
+        Entry(self, relief=RIDGE,
+              textvariable=display,justify='right',bd=30 ,bg="powder blue").pack(side=TOP, expand=YES,
+                                                                         fill=BOTH)
 
-b1 = Button(root, text="1",command=buttonFunction)
-b1.pack(side=LEFT)
-
-b2= Button(root, text="2",command=buttonFunction)
-b2.pack(side=LEFT)
-
-b3 = Button(root, text="3", command=buttonFunction)
-b3.pack(side=LEFT)
-
-b4 = Button(root, text="4", command=buttonFunction)
-b4.pack(side=LEFT)
-
-b5 = Button(root, text="5", command=buttonFunction)
-b5.pack(side=LEFT)
-
-b6 = Button(root, text="6", command=buttonFunction)
-b6.pack(side=LEFT)
-
-b7 = Button(root, text="7", command=buttonFunction)
-b7.pack(side=LEFT)
-
-b8 = Button(root, text="8", command=buttonFunction)
-b8.pack(side=LEFT)
-
-b9 = Button(root, text="9", command=buttonFunction)
-b9.pack(side=LEFT)
-
-b10 = Button(root, text="+", command=buttonFunction)
-b10.pack(side=TOP)
-
-b11 = Button(root, text="-", command=buttonFunction)
-b11.pack(side=TOP)
-
-b12 = Button(root, text="*", command=buttonFunction)
-b12.pack(side=TOP)
-
-b13 = Button(root, text="/", command=buttonFunction)
-b13.pack(side=TOP)
-
-b14 = Button(root, text="=", command=buttonFunction)
-b14.pack(side=TOP)
-
-b = Button(root, text="zamknij", command=buttonFunction)
-b.pack(side=RIGHT)
-
-root.mainloop()
-#123123
-
+if __name__== '__main__':
+    app().mainloop()
