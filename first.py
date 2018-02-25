@@ -1,6 +1,6 @@
 from tkinter import *
 root = Tk()
-root.geometry('300x300')
+root.geometry('400x200')
 l=Label(root, text="kalkulator")
 l.pack(side=TOP)
 
@@ -55,4 +55,5 @@ b13.pack(side=BOTTOM)
 b14 = Button(root, text="=", command=buttonFunction)
 b14.pack(side=BOTTOM)
 root.mainloop()
+#123123
 
