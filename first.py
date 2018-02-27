@@ -1,58 +1,25 @@
 from tkinter import *
+
 root = Tk()
-root.geometry('400x200')
-l=Label(root, text="kalkulator")
-l.pack(side=TOP)
+root.geometry("500x500")
 
-def buttonFunction():
-    print("hello world")
+c= Canvas(root, height=450, width=400, bg="gray")
+l= c.create_line(15,15,200,227, width=10)
+ll= c.create_line(15,15,1,227, width=10)
 
-def iCalc(source, side) :
-    storeObj = Frame(source, borderwidth=4, bd=4, bg="gray")
-    storeObj.pack(side=side, expand=YES, fill=BOTH)
-    return storeObj
-
-def button(source, side , text, command=None):
-    storeObj = Button(source, text=text, command=command)
-    storeObj.pack(side=side, expand=YES, fill=BOTH)
-    return storeObj
-
-class app(Frame):
-    def __init__(self):
-        Frame.__init__(self)
-        self.option_add('*Font', 'arial 40 bold')
-        self.pack(expand=YES, fill=BOTH)
-        self.master.title('Kalkulator')
-
-
-        display = StringVar()
-        Entry(self, relief=FLAT,
-              textvariable=display,justify='right',bd=30 ,bg="white").pack(side=TOP, expand=YES,
-                                                                         fill=BOTH)
-        for clearBut in (["CE"] , ["C"]):
-            erase = iCalc(self ,TOP)
-            for ichar in clearBut:
-                button(erase, LEFT, ichar,
-                       lambda storeObj=display,q=ichar: storeObj.set(''))
-
-
-        for Numbut in ("789/" , "456*" , "123-", "0.+"):
-            FunctionNum = iCalc(self, TOP)
-            for char in Numbut:
-                button(FunctionNum,LEFT,char,
-                       lambda storeObj=display, q=char: storeObj.set(storeObj.get() +q))
-
-        EqualsButton = iCalc(self, TOP)
-        for iEquals in "=":
-            if iEquals == '=':
-                btniEquals = button(EqualsButton, LEFT, iEquals)
-                btniEquals.bind('<ButtonRelease-1>',
-                                lambda e, s=self, storeObj=display: s.calc(storeObj),'+')
-            else:
-                btniEquals = button(EqualsButton, LEFT, iEquals,
-                                    lambda storeObj=display, s=' %s '%iEquals: storeObj.set(storeObj.get()+s))
+ml= c.create_line(315,315,200,227, width=10)
+mll= c.create_line(15,15,1,227, width=10)
 
 
 
-if __name__== '__main__':
-    app().mainloop()
+o = c.create_oval(20,20,10,10,fill="red")
+
+oo = c.create_oval(220,220,120,10,fill="red")
+
+
+arc = c.create_arc(110,50,240,2210, extent=50, fill="red")
+
+r= c.create_rectangle(320,320,200,200,fill="brown")
+c.pack()
+
+root.mainloop()
