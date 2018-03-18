@@ -1,13 +1,19 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
   <head>
     <meta charset="utf-8">
     <title>first app</title>
-    <link rel="shortcut icon"   href="favicon.ico"/>
+    <link rel="shortcut icon"   href="{%static "/images/favicon.ico"%}"/>
+    <link rel="stylesheet" href="{%static "/css/style.css"%}">
 
   </head>
   <body>
     <center><h1>hello hello to index html</h1></center>
+      <center><h1>this is a django picturre!</h1></center>
+
+    <center>  <img src="{% static "images/image.png"%}" width="700px" height="300px"alt="foton"></center>
+
   <h2><center>{{insert_me}}</center></h2>
   </body>
 </html>
